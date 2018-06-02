@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class KeyboardManager : MonoBehaviour
+public class CombatSceneKeyboardManager : MonoBehaviour
 {
     public CombatSceneNavigationManager combatSceneNavigationManager;
 
