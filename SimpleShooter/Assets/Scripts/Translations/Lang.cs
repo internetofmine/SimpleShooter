@@ -1,11 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
-public class Lang
+public sealed class Lang
 {
-    public string CombatScene_QuitTitle = "Confirm Exit";
-    public string CombatScene_QuitMessage = "Your application will exit now";
-    public string CombatScene_QuitConfirm = "OK";
-    public string CombatScene_QuitCancel = "Cancel";
+    private static readonly Lang instance = new Lang();
+
+    static Lang() { }
+    private Lang() { }
+    
+    private Dictionary<string, string> langContainer;
+
+    public static Lang Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+    public void SetLanguage(Dictionary<string, string> langContainer)
+    {
+        this.langContainer = langContainer;
+    }
+
+    public string GetTranslation(LanguageKeys langKey)
+    {
+        return this.langContainer[langKey.ToString()];
+    }
 }
+
