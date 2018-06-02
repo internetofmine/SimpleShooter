@@ -1,13 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Translations;
+using System.Collections.Generic;
 
 public sealed class Lang
 {
     private static readonly Lang instance = new Lang();
 
-    static Lang() { }
-    private Lang() { }
+    static Lang() {
+        langContainer = new Dictionary<string, string>();
+    }
+
+    private Lang() {
+        langContainer = new Dictionary<string, string>();
+    }
     
-    private Dictionary<string, string> langContainer;
+    private static Dictionary<string, string> langContainer;
 
     public static Lang Instance
     {
@@ -19,12 +25,12 @@ public sealed class Lang
 
     public void SetLanguage(Dictionary<string, string> langContainer)
     {
-        this.langContainer = langContainer;
+        Lang.langContainer = langContainer;
     }
 
     public string GetTranslation(LanguageKeys langKey)
     {
-        return this.langContainer[langKey.ToString()];
+        return Lang.langContainer[langKey.ToString()];
     }
 }
 

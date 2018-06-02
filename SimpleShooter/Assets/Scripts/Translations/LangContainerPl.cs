@@ -7,9 +7,14 @@ public class LangContainerPl : LangContainer
 {
     public new Dictionary<string, string> languageDict = new Dictionary<string, string>()
         {
+            {"General_OK", "OK"},
+
             {"CombatScene_QuitTitle", "Potwierdź wyjście"},
             {"CombatScene_QuitMessage", "Aplikacja się wyłączy"},
             {"CombatScene_QuitConfirm", "OK"},
-            {"CombatScene_QuitCancel", "Anuluj" }
+            {"CombatScene_QuitCancel", "Anuluj" },
+
+            {"GameEndedSceneMessage", "Game Over, naciśnij OK aby powrócić do menu" }
+
         };
 }
